@@ -1,8 +1,6 @@
 from .models import News
 
 
-
-
 def save_function(art_list):
     print("starting to save ...")
     new_count = 0

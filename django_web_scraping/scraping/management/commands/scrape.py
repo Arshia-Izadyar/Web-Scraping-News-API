@@ -38,4 +38,3 @@ class Command(BaseCommand):
             return save_function(art_list)
         except (Timeout, TooManyRedirects, ConnectionError) as e:
             self.stdout.write("the scrape Failed error ::", e)
-
