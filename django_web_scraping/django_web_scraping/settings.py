@@ -1,11 +1,14 @@
 from pathlib import Path
-from datetime import timedelta
+
+from .local_conf import DATABASES, SECRET_KEY, DEBUG
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = "django-insecure-&jptp@f%1m3a^36i#9w-8fw9457f^m8dtrh%fbz$c!kzz-@r#m"
+SECRET_KEY = SECRET_KEY
 
-DEBUG = True
+
+
+DEBUG = DEBUG
 
 ALLOWED_HOSTS = ["*"]
 
@@ -58,16 +61,7 @@ TEMPLATES = [
 WSGI_APPLICATION = "django_web_scraping.wsgi.application"
 
 
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": "news",
-        "PASSWORD": "a123",
-        "HOST": "localhost",
-        "USER": "arshia",
-        "PORT": 5432,
-    }
-}
+DATABASES = DATABASES
 
 
 AUTH_PASSWORD_VALIDATORS = [
@@ -125,9 +119,4 @@ SIMPLE_JWT = {
 }
 
 
-SIMPLE_JWT = {
-    "ACCESS_TOKEN_LIFETIME": timedelta(minutes=5),
-    "REFRESH_TOKEN_LIFETIME": timedelta(days=1),
-    "JTI_CLAIM": "jti",
-    "TOKEN_OBTAIN_SERIALIZER": "scraping.api.v1.serializer.MyTokenObtainPairSerializer",
-}
+SIMPLE_JWT = SIMPLE_JWT
