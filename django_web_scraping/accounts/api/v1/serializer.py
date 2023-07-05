@@ -57,7 +57,7 @@ class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
 
 
 class ChangePassWordSerializer(serializers.ModelSerializer):
-    old_pass = serializers.CharField()
+    old_pass = serializers.CharField(required=True)
     new_pass = serializers.CharField(required=True)
     new_pass2 = serializers.CharField(required=True)
 
