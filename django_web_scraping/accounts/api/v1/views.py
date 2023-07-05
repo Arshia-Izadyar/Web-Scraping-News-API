@@ -9,7 +9,7 @@ from .serializer import RegisterUserSerializer, ChangePassWordSerializer
 
 class RegisterUser(CreateAPIView):
     queryset = User.objects.all()
-    permission_classes = [AllowAny]
+    permission_classes = [AllowAny] # i know it's same as havin No permission_classes but its more classy to write more Code :)))))))))))
     serializer_class = RegisterUserSerializer
 
 
