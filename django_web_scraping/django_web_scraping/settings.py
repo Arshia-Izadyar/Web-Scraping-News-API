@@ -1,5 +1,5 @@
-
 from pathlib import Path
+from datetime import timedelta
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -10,21 +10,21 @@ DEBUG = True
 ALLOWED_HOSTS = ["*"]
 
 
-
 INSTALLED_APPS = [
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.messages",
-    'rest_framework',
-    'django_filters',
+    "rest_framework",
+    "django_filters",
     "django.contrib.staticfiles",
     "scraping.apps.ScrapingConfig",
-    
-
-    'rest_framework.authtoken',
-    'drf_yasg',
+    "rest_framework.authtoken",
+    "drf_yasg",
+    "rest_framework_swagger",
+    "rest_framework_simplejwt",
+    "accounts",
 ]
 
 MIDDLEWARE = [
@@ -86,7 +86,6 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
-
 LANGUAGE_CODE = "en-us"
 
 TIME_ZONE = "UTC"
@@ -111,18 +110,24 @@ CELERY_RESULT_SERIALIZER = "json"
 CELERY_TIMEZONE = "UTC"
 
 
-
 REST_FRAMEWORK = {
-    'DEFAULT_AUTHENTICATION_CLASSES': (
-        'rest_framework.authentication.TokenAuthentication',
-        'rest_framework_simplejwt.authentication.JWTAuthentication',
-        'rest_framework.authentication.SessionAuthentication',
+    "DEFAULT_AUTHENTICATION_CLASSES": (
+        "rest_framework.authentication.TokenAuthentication",
+        "rest_framework_simplejwt.authentication.JWTAuthentication",
+        "rest_framework.authentication.SessionAuthentication",
     ),
-    'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema' 
-
+    "DEFAULT_SCHEMA_CLASS": "rest_framework.schemas.coreapi.AutoSchema",
 }
 
 
 SIMPLE_JWT = {
-   'AUTH_HEADER_TYPES': ('JWT',),
+    "AUTH_HEADER_TYPES": ("JWT",),
+}
+
+
+SIMPLE_JWT = {
+    "ACCESS_TOKEN_LIFETIME": timedelta(minutes=5),
+    "REFRESH_TOKEN_LIFETIME": timedelta(days=1),
+    "JTI_CLAIM": "jti",
+    "TOKEN_OBTAIN_SERIALIZER": "scraping.api.v1.serializer.MyTokenObtainPairSerializer",
 }

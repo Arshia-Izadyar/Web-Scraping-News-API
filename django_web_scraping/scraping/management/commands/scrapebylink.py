@@ -34,4 +34,3 @@ class Command(BaseCommand):
             return save_function(arti_list)
         except (Timeout, TooManyRedirects, ConnectionError, ProxyError) as e:
             return self.stdout.write("Can't complete the scrape Error: ", e)
-

@@ -1,10 +1,12 @@
 from bs4 import BeautifulSoup
+
 # from celery import shared_task
 import requests
 from requests.exceptions import Timeout, TooManyRedirects, ConnectionError
 from datetime import datetime
 from django.core.management.base import BaseCommand
 from scraping.utils import save_function
+
 
 class Command(BaseCommand):
     help = "this command will scrape news from hacker news"
