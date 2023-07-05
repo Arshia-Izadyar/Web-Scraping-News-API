@@ -29,8 +29,8 @@ Users can search in news list in fields [title or source]
 
 users can be registerd in /api/accounts/register/
 
-every time a user registers a token will be created for the new user using signals
+**every time a user registers** a **token will be created for the new user using signals**
 
-and JWT token is supported as well 
+and **JWT** token is supported as well 
 
 users can change password too
