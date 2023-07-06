@@ -25,6 +25,8 @@ news is accessible via /api/news/
 
 Users can search in news list in fields [title or source]
 
+more doc available in /swagger/
+
 ## Accounts 
 
 users can be registerd in /api/accounts/register/
