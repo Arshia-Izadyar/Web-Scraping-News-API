@@ -6,7 +6,7 @@ for news data it screpe Hacker news ***RSS feed***
 
 or it can scrape any news site with a ***RSS feed***
 
-async in handeld with <b>Celery</b>
+async with handeld with <b>Celery</b>
 
 ## How does it work ? 
 
