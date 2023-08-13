@@ -1,4 +1,4 @@
-# master-project
+# Web-Scraping-News-API 
 
 this is a News APi with django REST framework 
 
